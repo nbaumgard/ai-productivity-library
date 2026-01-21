@@ -6,16 +6,26 @@
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-44XP1X5RWJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-44XP1X5RWJ');
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
 
-    setTimeout(function () {
-      window.location.replace("https://dayforce.atlassian.net/jira/polaris/projects/APL/ideas/view/9749477");
-    }, 200);
-  </script>
+  gtag('js', new Date());
+
+  // Configure GA to survive redirects
+  gtag('config', 'G-44XP1X5RWJ', {
+    transport_type: 'beacon'
+  });
+
+  // Explicit page view
+  gtag('event', 'page_view');
+
+  // Redirect after GA has time to send
+  setTimeout(function () {
+    window.location.replace("https://REAL-JPD-URL");
+  }, 600);
+</script>
+
 </head>
 <body></body>
 </html>
